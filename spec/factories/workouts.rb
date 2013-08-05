@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :workout do
-    date "2013-08-04 20:31:21"
+    date Time.now
   end
 end

@@ -1,5 +1,5 @@
 <ul>
   <% @workouts.each do |workout| %>
-  <li><%= workout.date %></li>
+  <li><%= link_to workout.date, workout %></li>
   <% end %>
 </ul>

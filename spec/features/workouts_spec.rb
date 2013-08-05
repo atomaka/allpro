@@ -18,6 +18,14 @@ describe "Workouts" do
   end
 
   describe "GET /workouts/(:id)" do
+    it "should visit a workout" do
+      visit workouts_path
+      click_link @workout.date
+
+      current_path.should == workout_path(@workout.id)
+      page.should have_content @workout.date
+    end
+
     it "should return 200" do
       visit "#{workouts_path}/#{@workout.id}"
       page.status_code.should be 200
