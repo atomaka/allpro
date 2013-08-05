@@ -1,5 +1,9 @@
 <ul>
   <% @workouts.each do |workout| %>
-  <li><%= link_to workout.date, workout %></li>
+  <li id="workout_<%= workout.id %>">
+    <%= link_to workout.date, workout %> [ 
+    <%= link_to 'Edit', edit_workout_path(workout) %> |
+    ]
+  </li>
   <% end %>
 </ul>

@@ -36,4 +36,13 @@ describe "Workouts" do
       page.should have_content @workout.date
     end
   end
+
+  describe "PUT /workouts/(:id)" do
+    it "should edit the workout" do
+      visit workouts_path
+      find("#workout_#{@workout.id}").click_link 'Edit'
+      
+      current_path.should == edit_workout_path(@workout)
+    end
+  end
 end
