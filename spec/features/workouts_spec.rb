@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe "Workouts" do
-  before :all do
+  before :each do
     @workout = FactoryGirl.create(:workout)
   end
 
