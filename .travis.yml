@@ -8,7 +8,7 @@ env:
 script:
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
-  - bundle exec rake
+  - xvfb-run bundle exec rake
 
 before_script:
   - cp config/database.travis.yml config/database.yml
