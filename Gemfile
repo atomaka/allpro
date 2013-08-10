@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'thin'
+gem 'validates_timeliness', '~> 3.0'
 
 group :doc do
   gem 'sdoc', require: false

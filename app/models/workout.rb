@@ -1,3 +1,3 @@
 class Workout < ActiveRecord::Base
-  validates :date, :presence => true
+  validates_date :date
 end

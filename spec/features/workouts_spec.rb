@@ -79,12 +79,13 @@ describe "Workouts" do
       page.should have_content 'Workout created'
     end
 
-    it "should not allow a blank date" do
+    it "should only accept real dates" do
       visit workouts_path
       click_link 'Create'
+      fill_in 'Date', :with => '2013-13-13'
       click_button 'Create Workout'
 
-      page.should have_content "Date can't be blank"
+      page.should have_content "Date is not a valid date"
     end
   end
 
