@@ -1,8 +1,12 @@
+<%= link_to 'Create', new_workout_path %>
+
 <ul>
   <% @workouts.each do |workout| %>
   <li id="workout_<%= workout.id %>">
-    <%= link_to workout.date, workout %> [ 
+    <%= link_to workout.date, workout %> [
     <%= link_to 'Edit', edit_workout_path(workout) %> |
+    <%= link_to 'Delete', workout_path(workout),
+                data: { confirm: 'Are you sure?' }, :method => :delete %>
     ]
   </li>
   <% end %>

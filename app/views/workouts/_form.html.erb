@@ -1,4 +1,11 @@
 <%= form_for @workout do |f| %>
+  <% if @workout.errors.any? %>
+  <ul>
+    <% @workout.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+  <% end %>
   <%= f.label :date %>
   <%= f.text_field :date %>
   <%= f.submit nil %>
