@@ -11,3 +11,6 @@
 
 # Ignore database config file
 config/database.yml
+
+# coveralls?
+coverage/*

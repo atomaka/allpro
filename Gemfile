@@ -24,5 +24,6 @@ group :test, :development do
   gem 'libnotify'
   gem 'rb-fsevent'
   gem 'database_cleaner', '1.0.1'
+  gem 'coveralls', require: false
 end
 
