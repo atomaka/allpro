@@ -46,6 +46,16 @@ describe "Workouts" do
 
       page.should have_content 'Workout updated'
     end
+
+    it "should not edit with bad data" do
+      visit workouts_path
+      find("#workout_#{@workout.id}").click_link 'Edit'
+
+      fill_in 'Date', :with => '2013-13-13'
+      click_button 'Update Workout'
+
+      page.should have_content "Date is not a valid date"
+    end
   end
 
   describe "GET /workouts/new" do
