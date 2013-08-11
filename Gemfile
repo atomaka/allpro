@@ -25,5 +25,6 @@ group :test, :development do
   gem 'rb-fsevent'
   gem 'database_cleaner', '1.0.1'
   gem 'coveralls', require: false
+  gem 'quiet_assets'
 end
 
