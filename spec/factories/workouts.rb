@@ -3,5 +3,6 @@
 FactoryGirl.define do
   factory :workout do
     date Time.now
+    day_type { %w(heavy medium light).sample }
   end
 end

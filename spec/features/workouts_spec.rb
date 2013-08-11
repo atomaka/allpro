@@ -63,6 +63,7 @@ describe "Workouts" do
       click_link 'Create'
 
       fill_in 'Date', :with => Date.today
+      select 'Heavy', :from => 'Day type'
       click_button 'Create Workout'
 
       page.should have_content 'Workout created'
@@ -83,6 +84,7 @@ describe "Workouts" do
       visit workouts_path
       click_link 'Create'
       fill_in 'Date', :with => '2013-13-13'
+      select 'Heavy', :from => 'Day type'
       click_button 'Create Workout'
 
       page.should have_content "Date is not a valid date"

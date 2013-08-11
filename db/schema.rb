@@ -11,12 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130810061810) do
+ActiveRecord::Schema.define(version: 20130811021123) do
 
   create_table "workouts", force: true do |t|
     t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "comment",    default: "",      null: false
+    t.string   "day_type",   default: "heavy", null: false
   end
 
 end
