@@ -1,4 +1,6 @@
 class Workout < ActiveRecord::Base
+  has_many :lifts, dependent: :destroy
+
   DAY_TYPES = [:heavy, :medium, :light ]
   validates_date :date
   validates_inclusion_of :day_type, :in => Workout::DAY_TYPES

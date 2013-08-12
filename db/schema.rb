@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130811021123) do
+ActiveRecord::Schema.define(version: 20130811190304) do
+
+  create_table "lifts", force: true do |t|
+    t.integer  "workout_id"
+    t.string   "lift_type"
+    t.integer  "sets"
+    t.integer  "repititions"
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "workouts", force: true do |t|
     t.date     "date"
