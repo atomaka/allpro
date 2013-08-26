@@ -1,5 +1,13 @@
 source 'https://rubygems.org'
 
+def darwin_only(require_as)
+  RbConfig::CONFIG['host_os'] =~ /darwin/ && require_as
+end
+
+def linux_only(require_as)
+  RbConfig::CONFIG['host_os'] =~ /linux/ && require_as
+end
+
 gem 'rails', '4.0.0'
 gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.0'
@@ -21,7 +29,7 @@ group :test, :development do
   gem 'capybara'
   gem 'capybara-webkit'
   gem 'guard-rspec'
-  gem 'libnotify'
+  gem 'libnotify', :require => linux_only('libnotify')
   gem 'rb-fsevent'
   gem 'database_cleaner', '1.0.1'
   gem 'coveralls', require: false
