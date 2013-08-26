@@ -30,6 +30,7 @@ group :test, :development do
   gem 'capybara-webkit'
   gem 'guard-rspec'
   gem 'libnotify', :require => linux_only('libnotify')
+  gem 'terminal-notifier-guard', :require => darwin_only('terminal-notifier-guard')
   gem 'rb-fsevent'
   gem 'database_cleaner', '1.0.1'
   gem 'coveralls', require: false
